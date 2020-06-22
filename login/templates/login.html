@@ -1,0 +1,48 @@
+<!Doctype html>
+<html lang="ru">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <title>Погодное приложение</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">KIRILL WEATHER APP</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="{% url 'index' %}">Main page</a>
+    <a class="p-2 text-dark" href="#">Information</a>
+  </nav>
+    <a class="btn btn-outline-primary" href="{% url 'login' %}">Profile</a>
+</div>
+
+<style>
+    form {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 150px;
+    box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #FFE4B5;
+
+    text-align: center!important;
+}
+</style>
+<body>
+    <form action="." method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <p>Enter data to enter :</p>
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input class="btn btn-lg btn-primary btn-block" type="submit" size="120px" value="Login"></p>
+        <a class="p-1 text-dark" href="{% url 'reg' %}">Registration</a>
+    </form>
+    </body>
